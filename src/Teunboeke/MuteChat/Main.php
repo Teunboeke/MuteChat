@@ -12,7 +12,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use function str_repeat;
 
-class MuteChat extends PluginBase implements Listener{
+class Main extends PluginBase implements Listener{
  
 public function onEnable() : void{
           $this->getServer()->getPluginManager()->registerEvents($this, $this);
