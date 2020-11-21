@@ -37,7 +37,7 @@ public function onEnable() : void{
  
      public function onPlayerChat(PlayerChatEvent $event){
               $config = $this->getConfig();
-              if($config->get("global-mute") === true && !$event->getPlayer()->hasPermission("global.mute.chat")){
+              if($config->get("global-mute") === true && !$event->getPlayer()->hasPermission("mute.chat")){
                            $event->setCancelled();
                            $event->getPlayer()->sendMessage($config->get("chat-error", "You cannot chat while mutechat is toggled on."));
                        }
