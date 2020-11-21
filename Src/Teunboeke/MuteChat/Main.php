@@ -25,3 +25,8 @@ public function onCommand(CommandSender $sender, Command $command, string $label
             $config->set("global-mute", $action === "on"); 
             if($action === "on" && $config->get("clear-chat") === true){  
                 $this->getServer()->broadcastMessage(str_repeat("\n", 100));
+            }
+            $this->getServer()->broadcastMessage($config->get("turned-" . $action, "Global mute has been toggled " . $action . "."));
+           
+           return true;
+                   }
