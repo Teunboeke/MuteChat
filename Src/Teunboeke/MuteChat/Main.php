@@ -13,3 +13,15 @@ use pocketmine\utils\TextFormat;
 use function str_repeat;
 
 class MuteChat extends PluginBase implements Listener{
+ 
+public function onEnable() : void{
+          $this->getServer()->getPluginManager()->registerEvents($this, $this);
+      }
+ 
+public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+          $action = $args[0] ?? "";
+          if($action === "on" || $action === "off"){
+            $config = $this->getConfig(); 
+            $config->set("global-mute", $action === "on"); 
+            if($action === "on" && $config->get("clear-chat") === true){  
+                $this->getServer()->broadcastMessage(str_repeat("\n", 100));
