@@ -9,4 +9,4 @@ commands:
  MuteChat:
      aliases: [gm]
      description: Enable/Disable Global Mute.
-         permission: Mute.Chat
+     permission: Mute.Chat
