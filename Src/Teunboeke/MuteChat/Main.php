@@ -18,7 +18,7 @@ public function onEnable() : void{
           $this->getServer()->getPluginManager()->registerEvents($this, $this);
       }
  
-public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
+    public function onCommand(CommandSender $sender, Command $command, string $label, array $args) : bool{
           $action = $args[0] ?? "";
           if($action === "on" || $action === "off"){
             $config = $this->getConfig(); 
@@ -30,3 +30,16 @@ public function onCommand(CommandSender $sender, Command $command, string $label
            
            return true;
                    }
+        $sender->sendMessage(TextFormat::RED . "Use '/mutechat <on|off>'");
+ 
+        return false;
+     }
+ 
+     public function onPlayerChat(PlayerChatEvent $event){
+              $config = $this->getConfig();
+              if($config->get("global-mute") === true && !$event->getPlayer()->hasPermission("global.mute.chat")){
+                           $event->setCancelled();
+                           $event->getPlayer()->sendMessage($config->get("chat-error", "You cannot chat while mutechat is toggled on."));
+                       }
+          }
+ }
