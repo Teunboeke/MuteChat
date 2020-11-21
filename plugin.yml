@@ -1,11 +1,9 @@
 name: MuteChat
-description: mute the whole chat with this plugin!
-
-main: Teunboeke\MuteChat\Main
+author: Teunboeke 
 version: 1.0.0 
+main: Teunboeke\MuteChat\Main
 api: 3.0.0
-
-author: Teunboeke
+description: mute the whole chat with this plugin!
 
 commands:
  MuteChat:
