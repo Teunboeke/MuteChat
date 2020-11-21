@@ -1,0 +1,8 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/Teunboeke/MuteChat
+build-by-default: true
+branches:
+- main
+projects:
+  MuteChat:
+    path: ""
+...
