@@ -1,8 +1,10 @@
 name: MuteChat
 description: mute the whole chat with this plugin!
+
 main: Teunboeke\MuteChat\Main
 version: 1.0.0 
 api: 3.0.0
+
 author: Teunboeke
 
 commands:
